@@ -87,7 +87,7 @@ class GameController {
     @GetMapping("/game/getGame")
     public ResponseEntity<List<Game>> getGames(@RequestParam() int player, String genre1, String genre2, String genre3) {
         try {
-            List<Game> games = new ArrayList<Game>();
+            List<Game> games = new ArrayList<>();
             games.addAll(gameRepository.findByMinPlayerLessThanEqualAndMaxPlayerGreaterThanEqualAndGenre1Equals(player, player, genre1));
             games.addAll(gameRepository.findByMinPlayerLessThanEqualAndMaxPlayerGreaterThanEqualAndGenre1Equals(player, player, genre2));
             games.addAll(gameRepository.findByMinPlayerLessThanEqualAndMaxPlayerGreaterThanEqualAndGenre1Equals(player, player, genre3));
@@ -99,7 +99,7 @@ class GameController {
             games.addAll(gameRepository.findByMinPlayerLessThanEqualAndMaxPlayerGreaterThanEqualAndGenre3Equals(player, player, genre3));
 
             //Search for Duplicates
-            Set<Game> set = new HashSet<Game>(games);
+            Set<Game> set = new HashSet<>(games);
             games.clear();
             games.addAll(set);
 
