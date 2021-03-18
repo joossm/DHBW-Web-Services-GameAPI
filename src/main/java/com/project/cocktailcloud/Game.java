@@ -1,10 +1,7 @@
 package com.project.cocktailcloud;
 
 import lombok.*;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 // Database object class
 // Lombok annotation

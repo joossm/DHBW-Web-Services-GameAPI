@@ -82,7 +82,7 @@ class GameController {
         gameRepository.deleteById(id);
     }
 
-    //GET Method to find games by amount of players and specific gernes
+    //GET Method to find games by amount of players and specific genres
     @CrossOrigin
     @GetMapping("/game/getGame")
     public ResponseEntity<List<Game>> getGames(@RequestParam() int player, String genre1, String genre2, String genre3) {
@@ -103,7 +103,7 @@ class GameController {
             games.clear();
             games.addAll(set);
 
-            //Event Handling
+        //Event Handling
             if (games.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
