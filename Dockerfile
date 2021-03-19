@@ -1,6 +1,6 @@
 FROM gradle:jdk15 AS build
 
-COPY --chown=gradle:gradle GameAPI_CocktailCloud /home/gradle/src
+COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
 RUN gradle build --no-daemon -x test
 
