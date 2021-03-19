@@ -1,18 +1,15 @@
-package com.project.cocktailcloud;
+package com.project.cocktailcloud.model;
 
 import lombok.*;
-import javax.persistence.*;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 // Database object class
 // Lombok annotation
-@Data
-@EqualsAndHashCode
-@Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@ToString
-class Game {
+@Data @EqualsAndHashCode @Entity @Getter @Setter @NoArgsConstructor @ToString
+public class Game {
 
     private @Id
     @GeneratedValue
@@ -25,8 +22,8 @@ class Game {
     private String genre3;
     private String ageAdvisory;
 
-    Game(String gameName, int minPlayer, int maxPlayer,
-         String genre1, String genre2, String genre3, String ageAdvisory) {
+    public Game(String gameName, int minPlayer, int maxPlayer,
+                String genre1, String genre2, String genre3, String ageAdvisory) {
 
         this.gameName = gameName;
         this.minPlayer = minPlayer;

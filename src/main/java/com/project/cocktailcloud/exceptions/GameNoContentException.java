@@ -1,4 +1,4 @@
-package com.project.cocktailcloud;
+package com.project.cocktailcloud.exceptions;
 
 public class GameNoContentException extends RuntimeException {
 

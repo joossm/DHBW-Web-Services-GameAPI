@@ -1,5 +1,8 @@
-package com.project.cocktailcloud;
+package com.project.cocktailcloud.controller;
 
+import com.project.cocktailcloud.exceptions.GameNotFoundException;
+import com.project.cocktailcloud.model.GameRepository;
+import com.project.cocktailcloud.model.Game;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration;
 import org.springframework.hateoas.CollectionModel;
@@ -103,7 +106,7 @@ class GameController {
             games.clear();
             games.addAll(set);
 
-        //Event Handling
+            //Event Handling
             if (games.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
